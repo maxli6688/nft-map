@@ -1,0 +1,105 @@
+.header{
+  position: relative;
+  padding: 0 24px;
+  display: flex;
+  background-color: #14181D;
+  border-bottom: 2px solid #34373C;
+  .tet {
+  color:#20BE50;
+  color:#B5F319;
+  color:#F19759;
+  color:#F8E706;
+  color:#B47332;
+  color:#748281;
+  color:#E44848;
+  color:#C00000;
+  color:#000000;
+  color:#00B0F0;
+  }
+  .logo{
+    width: 254px;
+    svg {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+  }
+  .mainmenu{
+    flex: 1;
+    .ant-menu-item{
+      padding: 0 16px;
+      &:hover {
+        background-color: none;
+      }
+    }
+    .ant-menu-item-active,
+    .ant-menu-item-selected {
+      background-color: none;
+    }
+    svg {
+      width: 23px;
+      height: 24px;
+      fill: #fff;
+      vertical-align: middle;
+      margin-right:8px;
+    }
+    .marketplace{
+      width: 20px;
+    }
+    .map{
+      width: 18px;
+    }
+    .about{
+      width: 20px;
+    }
+  }
+
+  .lanswitch-box {
+    padding: 0 16px;
+    border-left: 2px solid #34373C;
+    .global {
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+
+  .lanswitch-txt {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin: 20px 8px;
+    line-height: 20px;
+    padding: 0;
+    color: #fff;
+    span {
+      display: inline-block;
+      width: 32px;
+      text-align: center;
+    }
+    svg {
+      fill: #fff;
+      stroke: #fff;
+      vertical-align: -2px;
+      transition: all 0.3s ease-out;
+    }
+  }
+}
+.karmaverse {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sidebar-bg-color);
+  .header{
+    height: 64px;
+  }
+  .content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .map-action {
+    position: absolute;
+    bottom: 0;
+  }
+}

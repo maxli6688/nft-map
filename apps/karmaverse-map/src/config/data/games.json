@@ -1,0 +1,38 @@
+[
+  {
+    "coverbg": "bg_10002.png",
+    "homeimg": "game1.jpg",
+    "gamename": "Myth Wars & Puzzles",
+    "homelogo": "logo1.png",
+    "gamelogo": "game1logo.png",
+    "title": "EPIC RPG PUZZLE GAME! SUMMON MYTHOLOGY HEROES, CONQUER EVIL TITANS!",
+    "desc": "War between the gods have brought destruction and chaos to the mortal world. The world of man are lost. What will you do in these dark ages to change the fate of this world? Welcome to MythWars & Puzzles. Immerse yourself in the fantasy world with magic and lore. You will take on the role of a mighty Lord that have been chosen to join an unprecedented war against the evil gods. It is time to construct your magical city, train a massive army and recruit legendary heroes. This very unique and attractive RPG game uses the classic match-3 puzzle to drive the power of the gods into your army as they charge into the enemies fearlessly, and get rid of all the evil.",
+    "descCn": "<p>众神之间的战争给凡人世界带来了破坏和混乱。人类的世界已然迷失。在这个黑暗的时代，你将如何改变这个世界的命运？</p><p>欢迎来到MythWars & Puzzles，沉浸于魔法与传说的奇幻世界中。你将扮演一个强大的领主，被选召参与一场前所未有的战争，对抗邪恶的魔神。现在是时候建设你的魔法城市，训练一支庞大的军队，并招募传奇英雄......</p>",
+    "apple": "",
+    "googleplay": "https://play.google.com/store/apps/details?id=com.karma.mythwarspuzzles"
+  },
+  {
+    "coverbg": "bg_10005.png",
+    "homeimg": "game2.jpg",
+    "homelogo": "logo2.png",
+    "gamename": "Rolling Knight",
+    "gamelogo": "game2logo.png",
+    "title": "ROLL WITH DON, BUILD A VILLAGE, SUMMON THE GODS TO DEFEAT DEMONS IN MATCH-3 RPG.",
+    "desc": "Roll with Don Quixote through an alternate reality where myths, legends, and gods have become as real as the stories that enraptured him as he and his companions attempt to return a semblance of calm and order to a realm torn asunder by magic and deities run amok. Build a humble village into your base of power and recruit the gods themselves to aid you as you sally forth into the wider world. Defeat enemies, solve puzzles, and even gamble with Mephistopheles to earn rewards and become powerful enough to restore peace in this match-3 combat-based RPG.",
+    "descCn": "与堂吉诃德一同穿越到异界，在那里，神话传说与神明已经变得和令他着迷的故事一样真实，他和同伴们试图让这个被魔法肆意破坏的领域恢复和平与秩序。在这款三消RPG游戏中，将一个简陋的村庄建成属于你的基地，并招募众神助你远征。打败沿途的强敌，解决谜题，甚至与魔鬼梅菲斯特赌博以获得奖励，使自己足够强大以带来和平。",
+    "apple": "",
+    "googleplay": "https://play.google.com/store/apps/details?id=com.knight.trd"
+  },
+  {
+    "coverbg": "bg_10007.png",
+    "homeimg": "game3.jpg",
+    "gamename": "The Matching Dead",
+    "homelogo": "logo3.png",
+    "gamelogo": "game3logo.png",
+    "title": "The Matching Dead",
+    "desc": "To anyone who survived the zombie apocalypse: If you are reading this, well, congratulations! You haven't been turned into a zombie. 3 months ago, a zombie virus infected 90% of the population of this city. Only a few lucky people like you and me managed to survive. Now, you need to build a shelter, recruit survivors and collect weapons to fight off the zombies.",
+    "descCn": "<p>致在末日中幸存的人：</p><p>如果你正在阅读这则消息，那么，恭喜你！你还没有被转化成僵尸。3个月前，一种僵尸病毒感染了这个城市90%的人口。只有少数如你和我这样的幸运儿幸免于难。现在，你需要建立一个庇护所，招募幸存者，并收集武器来抵抗僵尸......</p>",
+    "apple": "",
+    "googleplay": "https://play.google.com/store/apps/details?id=com.global.sssx"
+  }
+]

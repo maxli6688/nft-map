@@ -1,0 +1,108 @@
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  list-style: none;
+}
+.main-careers-list {
+  .main-careers-item {
+    padding: 16px;
+    .divi {
+      margin: 0;
+      position: absolute;
+      bottom: -16px;
+    }
+    .split {
+      display: inline-block;
+      width: 1px;
+      height: 14px;
+      background-color: #999;
+      vertical-align: -4px;
+      margin: 0 8px;
+    }
+    .subinfo .ant-descriptions-item-container .ant-descriptions-item-content {
+      align-items: center;
+      color: #999;
+    }
+  }
+  .item {
+    position: relative;
+    .title {
+      position: relative;
+      padding: 8px 0 20px;
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--font-sub-black);
+    }
+    .txt {
+      position: relative;
+      padding: 8px 0 20px;
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--font-sub-black);
+    }
+    .pic {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      img {
+        min-height: 140px;
+      }
+    }
+  }
+  .item-pics {
+    position: relative;
+    width: 295px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 295px;
+      height: 140px;
+      background: #edeaea;
+    }
+  }
+}
+.main-careers-list {
+  .item {
+    .pic {
+      position: relative;
+    }
+    .icon-type {
+      position: absolute;
+      left: 5px;
+      bottom: 5px;
+      height: 22px;
+      line-height: 21px;
+      padding: 0 6px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      font-style: normal;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-careers-list {
+    .main-careers-item {
+      &:hover {
+        background-color: var(--bg-gray-color);
+        .title .ant-descriptions-item-content {
+          color: var(--active-font-color);
+        }
+      }
+    }
+    .item {
+      &:hover {
+        .txt {
+          color: var(--active-font-color);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+tmp-*
+packages/kvm-tile-map
+# exclude file packages/kvm-tile-map/dist
+
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local

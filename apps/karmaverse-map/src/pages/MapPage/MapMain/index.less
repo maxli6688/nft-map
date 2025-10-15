@@ -1,0 +1,298 @@
+@font-face {
+  font-family: oswaldlight;
+  src: url('./assets/fonts/Oswald-Regular-webfont.eot');
+  src: url('./assets/fonts/Oswald-Regular-webfont.eot?#iefix') format('embedded-opentype'),url('./assets/fonts/Oswald-Regular-webfont.woff') format('woff'),url('./assets/fonts/Oswald-Regular-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal
+}
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: oswaldbook,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.kv-map-box{
+  position: relative;
+  margin: 0 auto;
+  .kv-tile-map {
+    margin: 0 auto;
+  }
+  .menu-float{
+    position: absolute;
+    top: 24px;
+    right: 145px;
+    width: 145px;
+    display: flex;
+    justify-content: space-between;
+    svg {
+      display: inline-block;
+      margin-top: 9px;
+    }
+    .left {
+      width: 70px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background: #34373C;
+      border-radius: 10px 0 0 10px;
+      font-size: 0;
+      cursor: pointer;
+    }
+    .right {
+      width: 70px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 0;
+      text-align: center;
+      background: #28292C;
+      border-radius: 0px 10px 10px 0px;
+    }
+  }
+  .kv-map-thumb{
+    width: 324px;
+    height: 300px;
+    position: absolute;
+    top: 16px;
+    left: 280px;
+    z-index: 1;
+    // border: 1px solid var(--map-thumb-color);
+    box-shadow: 0 0 8px rgba(0,0,0, .5);
+    background-color: var(--map-thumb-bg-color);
+    transition: all .3s ease;
+    .inner {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .openclose{
+      position: absolute;
+      top: 0;
+      right: -40px;
+      height: 32px;
+      width: 32px;
+      text-align: center;
+      display: block;
+      padding: 0;
+      border-radius: 4px;
+    }
+    &.close {
+      left: 40px;
+    }
+    .anticon-left svg {
+      transition: all .3s ease;
+    }
+    &.hide{
+      width: 0;
+      .inner{
+        width: 0;
+      }
+      .anticon-left svg {
+        transform: rotate(-180deg);
+      }
+    }
+    .thumb-view{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .thumb-map canvas{
+      background-image: url('./assets/thumb.png')!important;
+      background-position: center center!important;
+      background-repeat: no-repeat!important;
+      background-size: 100% 100%!important;
+    }
+    // &::after{
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%,-50%);
+    //   content: '';
+    //   display: block;
+    //   width: 100px;
+    //   height: 100px;
+    //   border: 2px solid var(--map-thumb-thumb-color);
+    //   pointer-events: none;
+    // }
+  }
+  .mapslider{
+    position: absolute;
+    top: 0;
+    right: 22px;
+    transform: rotate(270deg);
+    transform-origin: right top;
+    width: 300px;
+    height: 20px;
+    z-index: 1;
+    padding: 0 24px;
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    .sbtn {
+      padding: 0;
+      margin: 0;
+      outline: 0;
+      border: 0;
+      border-radius: 2px;
+      text-shadow: none;
+      box-shadow: none;
+      font-size: 0;
+    }
+    .plus {
+      position: absolute;
+      right: 2px;
+      width: 20px;
+      height: 20px;
+    }
+    .plusicon {
+      display: block;
+      width: 20px;
+      height: 20px;
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 10px;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: #fff;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        background-color: #fff;
+        transform: translate(0, -50%);
+      }
+    }
+    .minus {
+      position: absolute;
+      top: 0;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    .minusicon {
+      display: block;
+      width: 20px;
+      height: 20px;
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 10px;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        background-color: #fff;
+        transform: translate(-50%, 0);
+      }
+    }
+    .slider{
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    input[type="range"] {
+      -webkit-appearance:none !important;
+      -moz-appearance:none !important;
+      width:100%;
+      height:100%;
+      // background:#eee;
+      background: #B2B2B2;
+      // border-radius: 2px; bug
+      overflow: hidden;
+      border:none;
+      outline:none;
+      margin: 0;
+      padding: 0;
+      &:active,
+      &:focus {
+        border: 0 !important;
+        outline: 0 !important
+      }
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 100%;
+      // background: #eee;
+      background: #B2B2B2;
+      border: none;
+      border-radius: 0;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance:none !important;
+      width:20px;
+      height:20px;
+      background:#f7f7f8;
+      border-radius:2px;
+      cursor:pointer;
+    }
+    input[type="range"]::-moz-range-thumb {
+      width:20px;
+      height:20px;
+      background:#f7f7f8;
+      border-radius:2px;
+      border: 0;
+      cursor:pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      background:#fff;
+    }
+  }
+  .popup{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    z-index: 2;
+  }
+}
+.ant-layout-content {
+
+  .mlite {
+    position: absolute;
+    top: 250px;
+    // left: 200px;
+    left: 0;
+    &.hidex{
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+    .atlaslite{
+      background: #fff;
+    }
+    .atlasliteparcel{
+      position: absolute;
+      top: 0;
+      background-color: #000;
+    }
+  }
+}
+
+.land-setting{
+  .ant-modal-body {
+    padding: 0 24px;
+  }
+  .ant-tabs >.ant-tabs-nav{
+    margin-bottom: 0;
+  }
+  .tabcontent {
+    display: none;
+    min-height: 682px;
+    &.active {
+      display: block;
+    }
+  }
+}

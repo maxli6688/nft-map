@@ -1,0 +1,121 @@
+.bordersetting{
+  padding-top: 16px;
+  --box-width: 160px;
+  --box-small-width: 80px;
+  --box-small-widthn: -86px;
+  --box-border-width: 6px;
+  --box-border-widthn: -6px;
+  --box-border-color: #000;
+  .footer {
+    display: flex;
+    .btn-group{
+      width: 100%;
+      text-align: right;
+
+    }
+  }
+  .landbox {
+    width: var(--box-width);
+    height: var(--box-width);
+    border: var(--box-border-width) solid var(--box-border-color);
+    margin: 100px auto;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #da1396;
+    &.topn {
+      .cover {
+        height: 150px;
+        top: -2px;
+      }
+      &.bottomn .cover{
+        height: 152px
+      }
+    }
+    &.bottomn {
+      .cover {
+        height: 150px;
+      }
+    }
+    &.leftn {
+      .cover {
+        width: 150.5px;
+        left: -2px;
+      }
+      &.rightn .cover{
+        width: 152.5px
+      }
+    }
+    &.rightn {
+      .cover {
+        width: 150.5px;
+      }
+    }
+    >div{
+      position: absolute;
+      background-color: #20be50;
+    }
+    .cover {
+      background-color: #da1396;;
+      width: 148px;
+      height: 148px;
+      top: 0;
+      left: 0;
+      transition: all .3s;
+    }
+    .boxtop {
+      top: var(--box-small-widthn);
+      left: -6px;
+      width: var(--box-width);
+      height: var(--box-small-width);
+      border-left: var(--box-border-width) solid var(--box-border-color);
+      border-right: var(--box-border-width) solid var(--box-border-color);
+    }
+    .boxbottom {
+      width: 100%;
+      top: 154px;
+      left: -6px;
+      width: var(--box-width);
+      height: var(--box-small-width);
+      border-left: var(--box-border-width) solid var(--box-border-color);
+      border-right: var(--box-border-width) solid var(--box-border-color);
+    }
+    .boxleft {
+      width: 80px;
+      height: var(--box-width);
+      left: var(--box-small-widthn);
+      top: -6px;
+      border-top: var(--box-border-width) solid var(--box-border-color);
+      border-bottom: var(--box-border-width) solid var(--box-border-color);
+    }
+    .boxright {
+      width: var(--box-small-width);
+      height: var(--box-width);
+      left: 154px;
+      top: -6px;
+      border-top: var(--box-border-width) solid var(--box-border-color);
+      border-bottom: var(--box-border-width) solid var(--box-border-color);
+    }
+  }
+  .setting-row {
+    display: flex;
+  }
+  .row {
+    display: flex;
+    height: 36px;
+    align-items: center;
+    &.w50 {
+      width: 50%;
+    }
+    .title{
+      width: 150px;
+      text-align: right;
+    }
+    .sval{
+      width: 30px;
+      text-align: center;
+    }
+    .sliders {
+      flex:1;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "karmaverse-map-app",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build --mode production",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "7z-wasm": "^1.2.0",
+    "@ant-design/icons": "^5.6.1",
+    "@karmaverse/kvm-tile-map": "workspace:*",
+    "ahooks": "^3.9.5",
+    "antd": "^5.27.5",
+    "axios": "^1.12.2",
+    "consola": "^3.4.2",
+    "fflate": "^0.8.2",
+    "i18next": "^21.10.0",
+    "i18next-browser-languagedetector": "^6.1.8",
+    "konva": "^8.4.3",
+    "libarchive.js": "^2.0.2",
+    "localforage": "^1.10.0",
+    "qs": "^6.14.0",
+    "react": "^18",
+    "react-app-polyfill": "^3.0.0",
+    "react-dom": "^18",
+    "react-easy-crop": "^4.7.5",
+    "react-i18next": "^11.18.6",
+    "react-image-crop": "^9.1.1",
+    "react-is": "^19.2.0",
+    "react-konva": "^18.2.14",
+    "react-router-dom": "^6.30.1",
+    "recoil": "^0.7.7",
+    "recoil-persist": "^4.2.0",
+    "swiper": "^12.0.2"
+  },
+  "devDependencies": {
+    "@types/qs": "^6.14.0",
+    "terser": "^5.44.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-style-import": "^2.0.0"
+  }
+}

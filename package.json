@@ -1,0 +1,33 @@
+{
+  "name": "karmaverse-tile-map-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r build",
+    "build:lib": "pnpm --filter @karmaverse/kvm-tile-map build",
+    "build:app": "pnpm --filter karmaverse-map-app build",
+    "dev": "pnpm -r --parallel dev",
+    "dev:lib": "pnpm --filter @karmaverse/kvm-tile-map dev",
+    "dev:app": "pnpm --filter karmaverse-map-app dev",
+    "dev:all": "pnpm --stream -r dev",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "serve": "pnpm -r --parallel serve"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.7.0",
+    "less": "^4.4.2",
+    "typescript": "^5.9.3",
+    "vite": "^6.3.6"
+  }
+}

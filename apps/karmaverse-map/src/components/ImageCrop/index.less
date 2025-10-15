@@ -1,0 +1,145 @@
+.imgcropbox-container {
+  .footer {
+    padding: 16px 0;
+    display: flex;
+
+    .btn-group{
+      flex:1;
+      text-align: right;
+    }
+  }
+  .setlect {
+    padding: 12px 0;
+  }
+  .inputfile {
+    position: relative;
+    .input{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+  }
+  .reactEasyCrop_CropArea{
+    &::before,
+    &::after{
+      display: none;
+    }
+  }
+  .canvaspreview {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .crop-row {
+    display: flex;
+  }
+  .row {
+    display: flex;
+    height: 36px;
+    align-items: center;
+    &.w50 {
+      width: 50%;
+    }
+    .title{
+      width: 100px;
+      text-align: right;
+    }
+    .sval{
+      width: 30px;
+      text-align: center;
+    }
+    .sliders {
+      flex:1;
+    }
+  }
+  .controls {
+    .grid-item {
+      &.active{
+        background: #3434bd86;
+      }
+    }
+  }
+  .imgcropbox{
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+    background: #f7f7f8;
+    box-shadow: inset 0px 0 0 1000px rgba(0,0,0,.5);
+    .cropgrid{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      // border: 1px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      flex-wrap: wrap;
+      pointer-events: none;
+      .grid-item {
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 1px rgba(255, 255, 255, 1);
+        display: flex;
+        text-shadow: 0px 0px 4px #fff;
+        font-size: 32px;
+        &.active{
+          background: #3434bd86;
+        }
+      }
+      &.col1 .grid-item{
+        width: 100%;
+      }
+      &.col2 .grid-item{
+        width: 50%;
+      }
+      &.col3 .grid-item{
+        width: 33.3333%;
+      }
+      &.col4 .grid-item{
+        width: 25%;
+      }
+      &.col5 .grid-item{
+        width: 20%;
+      }
+      &.col6 .grid-item{
+        width: 16.6666%;
+      }
+      &.col7 .grid-item{
+        width: 14.2857%;
+      }
+      &.col8 .grid-item{
+        width: 12.5%;
+      }
+      &.col9 .grid-item{
+        width: 11.1111%;
+      }
+      &.col10 .grid-item{
+        width: 10%;
+      }
+    }
+    .reactEasyCrop_CropArea{
+      box-shadow: none;
+    }
+    .crop-container {
+      position: absolute;
+      width: 100%;
+      top:0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .controls {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 50%;
+      transform: translateX(-50%);
+      height: 80px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
