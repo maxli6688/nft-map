@@ -8,6 +8,9 @@ import viteCompression from "vite-plugin-compression";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    include: ["react-is", "classnames"],
+  },
   plugins: [
     react(),
     createStyleImportPlugin({
@@ -33,6 +36,10 @@ export default defineConfig({
     // https://vitejs.dev/config/#resolve-alias
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      classnames: path.resolve(
+        __dirname,
+        "../../node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js"
+      ),
     },
   },
   server: {

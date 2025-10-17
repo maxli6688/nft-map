@@ -61,7 +61,7 @@ const useLandOwners = () => {
   useEffect(() => {
     fetchLandOwnersData().then((res) => {
       console.log(res);
-      setLandOwner(res);
+      // setLandOwner(res);
     });
   }, []);
   return { loading, landOwner };

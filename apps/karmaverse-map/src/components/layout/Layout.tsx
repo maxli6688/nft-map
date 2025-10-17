@@ -60,12 +60,10 @@ const App = () => {
     // console.log(e.key, 2222);
     i18n.changeLanguage(e.key);
   };
-  const lanmenu = (
-    <Menu onClick={handleDropMenuClick}>
-      <Menu.Item key="zh">中文</Menu.Item>
-      <Menu.Item key="en">EN</Menu.Item>
-    </Menu>
-  );
+  const lanMenuItems = [
+    { key: 'zh', label: '中文' },
+    { key: 'en', label: 'EN' }
+  ];
   return (
     <RecoilRoot>
       <BrowserRouter basename="/">
@@ -82,22 +80,22 @@ const App = () => {
               className="mainmenu"
               mode="horizontal"
               defaultSelectedKeys={["Map"]}
-            >
-              {MenuConf.map((item, index) => {
+              items={MenuConf.map((item, index) => {
                 const Comp = MenuConf[index]["comp"];
-                return (
-                  <Menu.Item key={item.name}>
-                    <NavLink to={item.link} key={item.name}>
+                return {
+                  key: item.name,
+                  label: (
+                    <NavLink to={item.link}>
                       <Comp />
                       {item.value}
                     </NavLink>
-                  </Menu.Item>
-                );
+                  )
+                };
               })}
-            </Menu>
+            />
 
             <Dropdown
-              overlay={lanmenu}
+              menu={{ items: lanMenuItems, onClick: handleDropMenuClick }}
               arrow={false}
               trigger={["click"]}
               overlayClassName="lanswitch-over"

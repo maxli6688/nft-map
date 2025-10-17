@@ -2,7 +2,7 @@
   "name": "karmaverse-map-app",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build --mode production",
     "serve": "vite preview"
   },
@@ -27,7 +27,7 @@
     "react-easy-crop": "^4.7.5",
     "react-i18next": "^11.18.6",
     "react-image-crop": "^9.1.1",
-    "react-is": "^19.2.0",
+    "react-is": "^18.3.1",
     "react-konva": "^18.2.14",
     "react-router-dom": "^6.30.1",
     "recoil": "^0.7.7",

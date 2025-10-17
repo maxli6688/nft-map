@@ -422,7 +422,7 @@ function App() {
         className="land-setting"
         centered
         width={1000}
-        visible={isLandModalVisible}
+        open={isLandModalVisible}
         footer={null}
         onCancel={handleCancel}
       >
