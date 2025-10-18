@@ -2,7 +2,7 @@ import { Layout, Menu, Dropdown } from "antd";
 import { useTranslation } from "react-i18next";
 import type { MenuProps } from "antd";
 import { BrowserRouter, NavLink } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import {
   KarmaverseIcon,
   Karmaverse,
@@ -48,6 +48,16 @@ const LanSwitch: React.FC = function () {
 };
 const App = () => {
   const { i18n } = useTranslation();
+  
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '/karmaverse-map.umd.js';
+    script.async = true;
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   const MenuConf = [
     { name: "Home", value: "Home", link: "/", comp: Home },
     { name: "Marketplace", value: "Marketplace", link: "/", comp: Marketplace },
