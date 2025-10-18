@@ -21,11 +21,13 @@ import { useViewport } from "@/hooks";
 import { Modal, Tabs } from "antd";
 import MapSideBar from "@/components/map/MapSidebar";
 import MapTileInfo from "@/components/map/MapTileInfo";
-import KarmaMapThumb, { thumbMapConf } from "@/KarmaMapThumb";
+import KarmaMapThumb, {
+  thumbMapConf,
+} from "@/pages/MapPage/MapMain/KarmaMapThumb";
 import KarmaMap from "./KarmaMap";
 import type { MapSideBarProps } from "@/components/map/MapSidebar";
 import type { MainMapProps } from "./KarmaMap";
-import type { ThumbMapProps } from "@/KarmaMapThumb";
+import type { ThumbMapProps } from "@/pages/MapPage/MapMain/KarmaMapThumb";
 import ImageCrop, { ImageCropProps } from "@/components/ImageCrop";
 import { getLandOwner, updateLandOwner } from "@/api/tile";
 import { useRecoilState, useRecoilValue } from "recoil";

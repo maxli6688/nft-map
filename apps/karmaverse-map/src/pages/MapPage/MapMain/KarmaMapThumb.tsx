@@ -12,9 +12,9 @@ import { Button } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
 // import { KonvaEventObject } from 'konva';
 import { KonvaEventObject } from "konva/lib/Node";
-import { mainScaleArr, thumbSizeArr } from "./pages/MapPage/MapMain";
+import { mainScaleArr, thumbSizeArr } from ".";
 import { useRecoilValue } from "recoil";
-import { thumbBase64State } from "./recoil/atoms/thumbBase64";
+import { thumbBase64State } from "../../../recoil/atoms/thumbBase64";
 // import { thumbImageUrl } from './config/map';
 
 export type ThumbMapProps = {
