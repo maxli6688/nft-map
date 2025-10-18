@@ -75,14 +75,10 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       classnames: require.resolve("classnames"),
-      ...(mode === "production"
-        ? {
-            "@karmaverse/kvm-tile-map": path.resolve(
-              __dirname,
-              "./src/types/kvm-tile-map-shim.js"
-            ),
-          }
-        : {}),
+      "@karmaverse/kvm-tile-map": path.resolve(
+        __dirname,
+        "./src/types/kvm-tile-map-shim.js"
+      ),
     },
   },
   commonjsOptions: {
@@ -122,9 +118,9 @@ export default defineConfig(({ mode }) => ({
       },
     },
     rollupOptions: {
-      // external: ["@karmaverse/kvm-tile-map"], // script 标签引入
       onwarn(warning, warn) {
         if (warning.code === "MIXED_EXPORTS") return;
+        if (warning.code === "UNRESOLVED_IMPORT") return;
         warn(warning);
       },
       output: {
