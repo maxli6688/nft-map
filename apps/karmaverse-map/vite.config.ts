@@ -7,9 +7,10 @@ import viteCompression from "vite-plugin-compression";
 // import visualizer from "rollup-plugin-visualizer"; // TODO
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   optimizeDeps: {
-    include: ["react-is", "classnames"],
+    // 预构建依赖：impetus(IIFE), mouse-wheel/touch-pinch/touch-position(CommonJS)
+    include: ["react-is", "classnames", "impetus", "mouse-wheel", "touch-pinch", "touch-position"],
   },
   plugins: [
     react(),
@@ -36,6 +37,14 @@ export default defineConfig({
     // https://vitejs.dev/config/#resolve-alias
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      ...(mode === "development"
+        ? {
+            "@karmaverse/kvm-tile-map": path.resolve(
+              __dirname,
+              "../../packages/kvm-tile-map/src"
+            ),
+          }
+        : {}),
       classnames: path.resolve(
         __dirname,
         "../../node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js"
@@ -76,6 +85,11 @@ export default defineConfig({
       },
     },
     rollupOptions: {
+      onwarn(warning, warn) {
+        // 忽略 CommonJS/ESM 混用警告
+        if (warning.code === 'MIXED_EXPORTS') return;
+        warn(warning);
+      },
       output: {
         manualChunks: {
           // 分包配置
@@ -93,4 +107,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

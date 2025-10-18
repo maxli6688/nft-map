@@ -32,7 +32,7 @@ const MapTileInfo: React.FC<MapTileInfoProps> = (props) => {
     });
   }
   return (
-    <div className={`mapinfo pt-16 pb-16 ${props.infoOpen ? "open" : ""}`}>
+    <div className={`mapinfo z10 pt-16 pb-16 ${props.infoOpen ? "open" : ""}`}>
       <Button
         type="text"
         onClick={props.infoOpenHandle}

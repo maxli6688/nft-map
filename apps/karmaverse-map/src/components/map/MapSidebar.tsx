@@ -160,7 +160,7 @@ const MapSideBar: React.FC<MapSideBarProps> = (props) => {
   };
   const [isClear, setClear] = useState(false);
   return (
-    <div className={`mapsidebar ${props.sideClose ? "close" : ""}`}>
+    <div className={`mapsidebar z10 ${props.sideClose ? "close" : ""}`}>
       <Button
         type="primary"
         onClick={props.sideCloseHandle}

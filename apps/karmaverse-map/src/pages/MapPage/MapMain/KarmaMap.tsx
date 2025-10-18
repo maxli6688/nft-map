@@ -75,12 +75,10 @@ export type MainMapProps = Partial<TileMapProps> & {
   className?: string;
   zoom?: number | undefined;
   filterTypes?: number[];
-  center?:
-    | {
-        x: number;
-        y: number;
-      }
-    | undefined;
+  center?: {
+    x: number;
+    y: number;
+  };
   onMainClick: (tile: AtlasTile) => void;
   mapInfoOpen: () => void;
   onChange?: (params: {

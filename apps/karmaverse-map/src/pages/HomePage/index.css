@@ -1,0 +1,48 @@
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.home-content {
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.home-content .description {
+  font-size: 20px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.home-content .note {
+  font-size: 16px;
+  margin-bottom: 40px;
+  opacity: 0.7;
+}
+
+.enter-button {
+  padding: 15px 40px;
+  font-size: 18px;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.enter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

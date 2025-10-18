@@ -496,8 +496,8 @@ function App() {
           width={Math.min(1920, view.width)}
           height={Math.min(1080, view.height - 64)}
           zoom={mainScale}
-          {...mainCenter}
-          // onChange={mainChange}
+          x={mainCenter.x}
+          y={mainCenter.y}
           onChange={mainChange}
           onMainClick={mainClick}
           mapInfoOpen={mapInfoOpen}
