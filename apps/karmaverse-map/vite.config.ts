@@ -51,25 +51,39 @@ export default defineConfig(({ mode }) => ({
     //   ],
     // }),
   ],
+  // resolve: {
+  //   // https://vitejs.dev/config/#resolve-alias
+  //   alias: {
+  //     "@": path.resolve(__dirname, "./src"),
+  //     // ...(mode === "development"
+  //     //   ? {
+  //     //       "@karmaverse/kvm-tile-map": path.resolve(
+  //     //         __dirname,
+  //     //         "../../packages/kvm-tile-map/src"
+  //     //       ),
+  //     //     }
+  //     //   : {}),
+  //     // classnames: path.resolve(
+  //     //   __dirname,
+  //     //   "../../node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js"
+  //     // ),
+  //     classnames: require.resolve("classnames"),
+  //   },
+  //   // dedupe: ["classnames"],
+  // },
   resolve: {
-    // https://vitejs.dev/config/#resolve-alias
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      // ...(mode === "development"
-      //   ? {
-      //       "@karmaverse/kvm-tile-map": path.resolve(
-      //         __dirname,
-      //         "../../packages/kvm-tile-map/src"
-      //       ),
-      //     }
-      //   : {}),
-      // classnames: path.resolve(
-      //   __dirname,
-      //   "../../node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js"
-      // ),
       classnames: require.resolve("classnames"),
+      ...(mode === "production"
+        ? {
+            "@karmaverse/kvm-tile-map": path.resolve(
+              __dirname,
+              "./src/types/kvm-tile-map-shim.js"
+            ),
+          }
+        : {}),
     },
-    // dedupe: ["classnames"],
   },
   commonjsOptions: {
     include: [/node_modules/],
@@ -108,16 +122,16 @@ export default defineConfig(({ mode }) => ({
       },
     },
     rollupOptions: {
-      external: ["@karmaverse/kvm-tile-map"], // script 标签引入
+      // external: ["@karmaverse/kvm-tile-map"], // script 标签引入
       onwarn(warning, warn) {
         if (warning.code === "MIXED_EXPORTS") return;
         warn(warning);
       },
       output: {
-        globals: {
-          // script 标签引入
-          "@karmaverse/kvm-tile-map": "KvmTileMap",
-        },
+        // globals: {
+        //   // script 标签引入
+        //   "@karmaverse/kvm-tile-map": "KvmTileMap",
+        // },
         manualChunks: {
           // 分包配置
           vendor: ["react", "react-dom", "react-router-dom"],
