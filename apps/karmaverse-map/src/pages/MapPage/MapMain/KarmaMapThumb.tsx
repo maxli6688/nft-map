@@ -181,11 +181,14 @@ const KarmaMapThumb: React.FC<ThumbMapProps> = (props) => {
     // cornerRadius: 5,
   };
   useEffect(() => {
-    // console.log(props.width, props.mainScale, 3333333);
+    console.log(props.width, props.mainScale, 3333333);
     const thumbIndex = thumbSizeArr.indexOf(props.width!);
     const thumbScale = mainScaleArr[thumbIndex];
-    setSliderval(thumbScale);
-  }, [props.width]);
+    if (thumbScale && thumbScale !== sliderval) {
+      setSliderval(thumbScale);
+    }
+  }, [props.width, props.mainScale]);
+
   useEffect(() => {
     // console.log(thumbimglist_.length);
     setThumbimglist(

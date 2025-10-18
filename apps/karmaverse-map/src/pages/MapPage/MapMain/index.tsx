@@ -3,6 +3,7 @@ import React, {
   useEffect,
   useCallback,
   useState,
+  useRef,
   WheelEventHandler,
   memo,
 } from "react";
@@ -244,6 +245,81 @@ function App() {
     updateSearchParamsxy(newPos);
     setMainCenter(newPos);
   };
+  const throttleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const mainChange: MainMapProps["onChange"] = ({ center, zoom }) => {
+    // 查找最接近的有效 scale
+    const findClosestScale = (scale: number) => {
+      let closest = mainScaleArr[0];
+      let minDiff = Math.abs(scale - closest);
+      for (const validScale of mainScaleArr) {
+        const diff = Math.abs(scale - validScale);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closest = validScale;
+        }
+      }
+      return closest;
+    };
+
+    const validZoom = findClosestScale(zoom!);
+    const zoomIndex = mainScaleArr.indexOf(validZoom);
+
+    // 只有在 zoom 在 mainScaleArr 中时才更新
+    if (zoomIndex === -1) return;
+
+    function getThumbCord(coord: { x: number; y: number }) {
+      const thumbSize = 300;
+      const mainSize = 406;
+      return {
+        x: ((coord.x + mainSize / 2) / mainSize) * thumbSize,
+        y: ((mainSize / 2 - coord.y) / mainSize) * thumbSize,
+      };
+    }
+
+    const newThumbSize = thumbSizeArr[zoomIndex];
+    const newPos = getThumbCord(center);
+
+    // 更新缩略图大小
+    if (validZoom !== mainScale) {
+      const thumbProps_ = {
+        width: newThumbSize,
+        height: newThumbSize,
+        x: newPos.x - newThumbSize / 2,
+        y: newPos.y - newThumbSize / 2,
+      };
+      setThumbScaleIndex(zoomIndex);
+      setThumbProps(thumbProps_);
+      setMainScale(validZoom);
+    } else {
+      // 更新缩略图位置
+      const thumbProps_ = {
+        ...thumbProps,
+        x: newPos.x - thumbProps.width! / 2,
+        y: newPos.y - thumbProps.width! / 2,
+      };
+      setThumbProps(thumbProps_);
+    }
+
+    // 更新中心位置
+    if (center.x !== mainCenter.x || center.y !== mainCenter.y) {
+      setMainCenter(center);
+    }
+
+    // 节流更新 URL
+    if (throttleTimer.current) {
+      clearTimeout(throttleTimer.current);
+    }
+    throttleTimer.current = setTimeout(() => {
+      setUrlSearchParams({
+        zoom: String(validZoom),
+        x: String(Math.round(center.x)),
+        y: String(Math.round(center.y)),
+      });
+    }, 300);
+  };
+
+  /*
   // debounce
   const mainChange: MainMapProps["onChange"] = ({ center, zoom }) => {
     if (
@@ -289,7 +365,7 @@ function App() {
       }; // move by 1px
       setThumbProps(thumbProps_);
     }
-  };
+  */
   const [landOwnerObj, setLandOwnerObj] = useRecoilState(landOwnerState);
   const [landOwnerImageObj, setLandOwnerImage] =
     useRecoilState(landOwnerImageState);
