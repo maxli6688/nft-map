@@ -1,2 +1,3 @@
 public-hoist-pattern[]=*react-is*
+public-hoist-pattern[]=classnames
 shamefully-hoist=true
