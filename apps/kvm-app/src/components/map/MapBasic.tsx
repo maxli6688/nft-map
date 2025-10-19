@@ -1,4 +1,4 @@
-import { TileMap, Layer, Coord } from "@karmaverse/kvm-tile-map";
+import { TileMap, Layer, Coord } from "@kvm/kvm-tile-map";
 const simpleLayer: Layer = (x, y) => {
   return {
     color: "#eeeeee",

@@ -1,4 +1,4 @@
-declare module '@karmaverse/kvm-tile-map' {
+declare module "@kvm/kvm-tile-map" {
   export interface Coord {
     x: number;
     y: number;

@@ -15,7 +15,7 @@ import {
 } from "react-router-dom";
 // import logo from './logo.svg'
 import "./index.less";
-// import { TileMap, Layer, Coord, TileMapProps } from "@karmaverse/kvm-tile-map";
+// import { TileMap, Layer, Coord, TileMapProps } from "@kvm/kvm-tile-map";
 // import { useSize } from 'ahooks';../../dist
 // const size = useSize(window.document);
 import { useViewport } from "@/hooks";
@@ -46,7 +46,7 @@ import { getLandOwnerImageUrl } from "@/config/constants/map";
 export const thumbSizeArr = [80, 72, 64, 56, 48, 40, 32, 24, 16, 8];
 export const mainScaleArr = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
 const { TabPane } = Tabs;
-// import { Thing } from '@karmaverse/kvm-tile-map';
+// import { Thing } from '@kvm/kvm-tile-map';
 function App() {
   const [params, setUrlSearchParams] = useSearchParams();
   function initxy(xy: string | null): number {

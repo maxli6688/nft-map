@@ -44,42 +44,24 @@ export default defineConfig(({ mode }) => ({
     // importToCDN({
     //   modules: [
     //     {
-    //       name: "@karmaverse/kvm-tile-map",
+    //       name: "@kvm/kvm-tile-map",
     //       var: "KvmTileMap",
-    //       path: "https://cdn.jsdelivr.net/npm/@karmaverse/kvm-tile-map/dist/index.umd.js",
+    //       path: "https://cdn.jsdelivr.net/npm/@kvm/kvm-tile-map/dist/index.umd.js",
     //     },
     //   ],
     // }),
   ],
-  // resolve: {
-  //   // https://vitejs.dev/config/#resolve-alias
-  //   alias: {
-  //     "@": path.resolve(__dirname, "./src"),
-  //     // ...(mode === "development"
-  //     //   ? {
-  //     //       "@karmaverse/kvm-tile-map": path.resolve(
-  //     //         __dirname,
-  //     //         "../../packages/kvm-tile-map/src"
-  //     //       ),
-  //     //     }
-  //     //   : {}),
-  //     // classnames: path.resolve(
-  //     //   __dirname,
-  //     //   "../../node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js"
-  //     // ),
-  //     classnames: require.resolve("classnames"),
-  //   },
-  //   // dedupe: ["classnames"],
-  // },
   resolve: {
+    // https://vitejs.dev/config/#resolve-alias
     alias: {
       "@": path.resolve(__dirname, "./src"),
       classnames: require.resolve("classnames"),
-      "@karmaverse/kvm-tile-map": path.resolve(
-        __dirname,
-        "./src/types/kvm-tile-map-shim.js"
-      ),
+      "@kvm/kvm-tile-map":
+        mode === "development"
+          ? path.resolve(__dirname, "../../packages/kvm-tile-map/src")
+          : path.resolve(__dirname, "./src/types/kvm-tile-map-shim.js"),
     },
+    // dedupe: ["classnames"],
   },
   commonjsOptions: {
     include: [/node_modules/],
@@ -126,7 +108,7 @@ export default defineConfig(({ mode }) => ({
       output: {
         // globals: {
         //   // script 标签引入
-        //   "@karmaverse/kvm-tile-map": "KvmTileMap",
+        //   "@kvm/kvm-tile-map": "KvmTileMap",
         // },
         manualChunks: {
           // 分包配置
@@ -136,7 +118,7 @@ export default defineConfig(({ mode }) => ({
           utils: ["axios", "qs", "i18next", "react-i18next"],
           hooks: ["ahooks"],
           konva: ["konva", "react-konva"],
-          // map: ["@karmaverse/kvm-tile-map"], // 已使用 CDN
+          // map: ["@kvm/kvm-tile-map"], // 已使用 CDN
         },
         // entryFileNames: `assets/[name].[hash].js`,
         // chunkFileNames: `assets/[name].[hash].js`,

@@ -1,13 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
-import {
-  TileMapLite,
-  Layer,
-  Coord,
-  TileMapProps,
-} from "@karmaverse/kvm-tile-map";
-// import type { TileMap } from '@karmaverse/kvm-tile-map';
+import { TileMapLite, Layer, Coord, TileMapProps } from "@kvm/kvm-tile-map";
+// import type { TileMap } from '@kvm/kvm-tile-map';
 import { mapColorObj } from "../../config/constants/map";
 import { mapDataState } from "../../recoil/atoms/map";
 import { thumbBase64State } from "../../recoil/atoms/thumbBase64";

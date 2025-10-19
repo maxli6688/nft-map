@@ -9,7 +9,7 @@ import { Button, Checkbox, Input } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
 import { CheckboxChangeEvent } from "antd/lib/checkbox";
 import { mapTypeObj, mapColorObj } from "../../config/constants/map";
-import { Coord } from "@karmaverse/kvm-tile-map";
+import { Coord } from "@kvm/kvm-tile-map";
 
 // import { stages } from 'konva/lib/Stage';
 type ICheckItem = {

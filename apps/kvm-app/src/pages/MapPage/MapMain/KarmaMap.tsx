@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { TileMap, Layer, TileMapProps } from "@karmaverse/kvm-tile-map";
+import { TileMap, Layer, TileMapProps } from "@kvm/kvm-tile-map";
 import { mapColorObj } from "@/config/constants/map";
 import { mapDataState } from "@/recoil/atoms/map";
 import { curLandState } from "@/recoil/atoms/land";

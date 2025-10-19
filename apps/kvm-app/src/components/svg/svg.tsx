@@ -155,7 +155,7 @@ export const Marketplace = function () {
     </svg>
   );
 };
-export const KarmaverseCoin = () => (
+export const kvmCoin = () => (
   <svg
     width="23"
     height="23"
@@ -171,7 +171,7 @@ export const KarmaverseCoin = () => (
     />
   </svg>
 );
-export const KarmaverseIconBlack = () => (
+export const kvmIconBlack = () => (
   <svg
     width="15"
     height="13"
@@ -188,7 +188,7 @@ export const KarmaverseIconBlack = () => (
     />
   </svg>
 );
-export const Karmaverse = () => (
+export const Kvm = () => (
   <svg
     width="199"
     height="20"
@@ -204,7 +204,7 @@ export const Karmaverse = () => (
     />
   </svg>
 );
-export const KarmaverseIcon = () => (
+export const KvmIcon = () => (
   <svg
     width="39"
     height="32"

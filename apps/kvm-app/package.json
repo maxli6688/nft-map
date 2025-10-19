@@ -1,5 +1,5 @@
 {
-  "name": "karmaverse-map-app",
+  "name": "kvm-map-app",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite --host",
@@ -9,7 +9,7 @@
   "dependencies": {
     "7z-wasm": "^1.2.0",
     "@ant-design/icons": "^5.6.1",
-    "@karmaverse/kvm-tile-map": "workspace:*",
+    "@kvm/kvm-tile-map": "workspace:*",
     "ahooks": "^3.9.5",
     "antd": "^5.27.5",
     "axios": "^1.12.2",

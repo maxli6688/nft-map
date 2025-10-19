@@ -6,8 +6,8 @@ import { lazy, Suspense, useEffect } from "react";
 import React from "react";
 import ReactDOM from "react-dom";
 import {
-  KarmaverseIcon,
-  Karmaverse,
+  KvmIcon,
+  Kvm,
   Home,
   Marketplace,
   Dex,
@@ -50,14 +50,17 @@ const LanSwitch: React.FC = function () {
 };
 const App = () => {
   const { i18n } = useTranslation();
-  
+
   useEffect(() => {
-    window.React = React;
-    window.ReactDOM = ReactDOM;
-    const script = document.createElement('script');
-    script.src = '/karmaverse-map.umd.js';
-    document.head.appendChild(script);
+    if (import.meta.env.PROD) {
+      window.React = React;
+      window.ReactDOM = ReactDOM;
+      const script = document.createElement("script");
+      script.src = "/kvm-map.umd.js";
+      document.head.appendChild(script);
+    }
   }, []);
+
   const MenuConf = [
     { name: "Home", value: "Home", link: "/", comp: Home },
     { name: "Marketplace", value: "Marketplace", link: "/", comp: Marketplace },
@@ -71,18 +74,18 @@ const App = () => {
     i18n.changeLanguage(e.key);
   };
   const lanMenuItems = [
-    { key: 'zh', label: '中文' },
-    { key: 'en', label: 'EN' }
+    { key: "zh", label: "中文" },
+    { key: "en", label: "EN" },
   ];
   return (
     <RecoilRoot>
       <BrowserRouter basename="/">
-        <Layout className="karmaverse">
+        <Layout className="kvm">
           <Header className="header">
             <div className="logo">
               <NavLink to="/">
-                <KarmaverseIcon />
-                <Karmaverse />
+                <KvmIcon />
+                <Kvm />
               </NavLink>
             </div>
             <Menu
@@ -99,7 +102,7 @@ const App = () => {
                       <Comp />
                       {item.value}
                     </NavLink>
-                  )
+                  ),
                 };
               })}
             />

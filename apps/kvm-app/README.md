@@ -1,13 +1,13 @@
-# Karmaverse Tile Map
+# kvm Tile Map
 
-Karmaverse Tile Map 是一个基于 Web 的交互式地图组件库，专为 Karmaverse 虚拟世界或 NFT 土地系统设计，支持缩放、拖拽、虚拟化渲染等交互功能。
+kvm Tile Map 是一个基于 Web 的交互式地图组件库，专为 kvm 虚拟世界或 NFT 土地系统设计，支持缩放、拖拽、虚拟化渲染等交互功能。
 
 ## 项目结构
 
 本项目采用 monorepo 架构，包含以下主要部分：
 
 - `packages/kvm-tile-map`: 地图组件库核心代码
-- `apps/karmaverse-map`: 基于地图组件库的示例应用
+- `apps/kvm-map`: 基于地图组件库的示例应用
 
 ## 技术栈
 
@@ -95,7 +95,7 @@ pnpm serve
 
 ## 示例应用
 
-示例应用位于 `apps/karmaverse-map`，展示了如何使用地图组件库构建完整的地图应用。
+示例应用位于 `apps/kvm-map`，展示了如何使用地图组件库构建完整的地图应用。
 
 ### 功能
 

@@ -1,5 +1,5 @@
 {
-  "name": "karmaverse-tile-map-workspace",
+  "name": "kvm-tile-map-workspace",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
@@ -7,11 +7,11 @@
   ],
   "scripts": {
     "build": "pnpm -r build",
-    "build:lib": "pnpm --filter @karmaverse/kvm-tile-map build",
-    "build:app": "pnpm --filter karmaverse-map-app build",
+    "build:lib": "pnpm --filter @kvm/kvm-tile-map build",
+    "build:app": "pnpm --filter kvm-map-app build",
     "dev": "pnpm -r --parallel dev",
-    "dev:lib": "pnpm --filter @karmaverse/kvm-tile-map dev",
-    "dev:app": "pnpm --filter karmaverse-map-app dev",
+    "dev:lib": "pnpm --filter @kvm/kvm-tile-map dev",
+    "dev:app": "pnpm --filter kvm-map-app dev",
     "dev:all": "pnpm --stream -r dev",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
