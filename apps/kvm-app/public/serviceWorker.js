@@ -1,11 +1,11 @@
 /* 监听安装事件 */
 // importScripts('idb.js');
-var CACHE_NAME = 'map-v1';
+var CACHE_NAME = "map-v1";
 var urlsToCache = [];
 // var urlsToCache = ['/', '/styles/main.css', '/script/main.js'];
-self.addEventListener('install', function (event) {
+self.addEventListener("install", function (event) {
   /* 通过这个方法可以防止缓存未完成，就关闭serviceWorker */
-  console.log(1123323);
+  // console.log(1123323);
   event.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll(urlsToCache);
@@ -14,7 +14,7 @@ self.addEventListener('install', function (event) {
 });
 
 /* 注册fetch事件，拦截全站的请求 */
-self.addEventListener('fetch', function (event) {
+self.addEventListener("fetch", function (event) {
   // if (event.request.url === 'https://api.github.com/users/abt10/repos') {
   //   console.log('IndexDB Reqrd');
   //   let db = idb.open('Projects_info').then((d) => {
@@ -25,8 +25,8 @@ self.addEventListener('fetch', function (event) {
   //     });
   //   });
   // }
-  console.log('fetched 33333');
-  if (event.request.url.indexOf('api/tilez') > -1) {
+  // console.log('fetched 33333');
+  if (event.request.url.indexOf("api/tilez") > -1) {
     event.respondWith(
       caches.match(event.request).then((res) => {
         if (res && isValid(res)) {
@@ -42,7 +42,7 @@ self.addEventListener('fetch', function (event) {
           if (
             !response ||
             response.status !== 200 ||
-            response.type !== 'basic'
+            response.type !== "basic"
           ) {
             return response;
           }
@@ -61,8 +61,8 @@ self.addEventListener('fetch', function (event) {
     );
   }
 });
-self.addEventListener('activate', function (event) {
-  console.log('activate');
+self.addEventListener("activate", function (event) {
+  console.log("activate");
   //  遍历 Service Worker 中的所有缓存，并删除未在缓存白名单中定义的任何缓存
   // var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
   // event.waitUntil(
@@ -79,7 +79,7 @@ self.addEventListener('activate', function (event) {
 });
 var isValid = function (response) {
   if (!response) return false;
-  var fetched = response.headers.get('x-user-date');
+  var fetched = response.headers.get("x-user-date");
   if (
     fetched &&
     parseFloat(fetched) + 1000 * 60 * 60 * 2 > new Date().getTime()
