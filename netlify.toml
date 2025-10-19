@@ -1,5 +1,7 @@
 [build]
-  command = "pnpm install --no-frozen-lockfile && pnpm run build:app"
+  base = "/"
+  command = "pnpm run build:app"
+  publish = "apps/kvm-app/dist"
 
 [[redirects]]
   from = "/api/*"
