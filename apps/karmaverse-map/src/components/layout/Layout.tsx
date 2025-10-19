@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import type { MenuProps } from "antd";
 import { BrowserRouter, NavLink } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
+import React from "react";
+import ReactDOM from "react-dom";
 import {
   KarmaverseIcon,
   Karmaverse,
@@ -50,13 +52,11 @@ const App = () => {
   const { i18n } = useTranslation();
   
   useEffect(() => {
+    window.React = React;
+    window.ReactDOM = ReactDOM;
     const script = document.createElement('script');
     script.src = '/karmaverse-map.umd.js';
-    script.async = true;
     document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
   }, []);
   const MenuConf = [
     { name: "Home", value: "Home", link: "/", comp: Home },
