@@ -1,3 +1,6 @@
+[build]
+  command = "pnpm install --no-frozen-lockfile && pnpm run build:app"
+
 [[redirects]]
   from = "/api/*"
   to = "http://180.184.65.66:7010/api/:splat"
