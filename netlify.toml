@@ -6,11 +6,11 @@
 
 # Netlify redirects 不支持代理到外部 HTTP
 # 需要后端 API 支持 HTTPS 或使用 Netlify Functions
-# [[redirects]]
-#   from = "/api/*"
-#   to = "http://180.184.65.66:7010/api/:splat"
-#   status = 200
-#   force = true
+[[redirects]]
+  from = "/api/*"
+  to = "http://180.184.65.66:7010/api/:splat"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/*"

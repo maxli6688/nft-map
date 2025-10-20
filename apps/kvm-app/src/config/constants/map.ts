@@ -10,7 +10,8 @@ export const mapTypeObj = {
   8: "Capitols", // '州府 & 首都', // Capital / State Captial
   9: "Rivers", // '河流边界', // River boundary
 };
-export const API_BASE_URL = import.meta.env.VITE_KARMA_API_URL as string;
+export const API_BASE_URL =
+  (import.meta.env.VITE_KARMA_API_URL as string) || "";
 console.log("API_BASE_URL", API_BASE_URL);
 
 export const getLandOwnerImageUrl = (tile: AtlasTile) => {
