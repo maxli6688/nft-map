@@ -10,7 +10,9 @@ import { Plugin as importToCDN } from "vite-plugin-cdn-import";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   define: {
-    'process.env.NODE_ENV': JSON.stringify(mode === 'production' ? 'development' : mode),
+    "process.env.NODE_ENV": JSON.stringify(
+      mode === "production" ? "development" : mode
+    ),
   },
   optimizeDeps: {
     // 预构建依赖：impetus(IIFE), mouse-wheel/touch-pinch/touch-position(CommonJS)
@@ -94,15 +96,15 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    minify: false,
-    // minify: "terser",
-    // terserOptions: {
-    //   compress: {
-    //     //生产环境时移除console
-    //     drop_console: true,
-    //     drop_debugger: true,
-    //   },
-    // },
+    // minify: false,
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        //生产环境时移除console
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
     rollupOptions: {
       onwarn(warning, warn) {
         if (warning.code === "MIXED_EXPORTS") return;
