@@ -16,7 +16,7 @@ import {
   Whitepaper,
 } from "../svg/svg";
 import "./Layout.less";
-import Loading from "../Loading";
+import Loading from "../Loading/Loading";
 
 const { Header, Content, Footer, Sider } = Layout;
 

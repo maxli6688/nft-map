@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import Loading from "../../components/Loading";
+import Loading from "../../components/Loading/Loading";
 
 // 懒加载大型地图组件
 const MapMain = lazy(() => import("./MapMain/index"));

@@ -1,9 +1,6 @@
 import React, { FC, Suspense } from "react";
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
-import Loading from "../components/Loading";
+import { Routes, Route } from "react-router-dom";
+import Loading from "../components/Loading/Loading";
 import NotFound from "../pages/NotFound";
 
 // 懒加载页面组件
