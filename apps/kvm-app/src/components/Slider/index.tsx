@@ -37,9 +37,9 @@ const SwiperSlier: FC<SwiperSliderProps> = (props) => {
         autoplay={{ delay: 115000, disableOnInteraction: false }}
         speed={600}
         effect={"slide"}
-        loop={true}
+        loop={props.slides.length > 1}
         direction={"horizontal"}
-        initialSlide={1}
+        initialSlide={0}
         pagination={{
           el: ".swiper-pagination",
           clickable: true,
