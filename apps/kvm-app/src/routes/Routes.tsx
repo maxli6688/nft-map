@@ -7,6 +7,7 @@ import NotFound from "../pages/NotFound";
 const HomePage = React.lazy(() => import("../pages/HomePage"));
 const MapPage = React.lazy(() => import("../pages/MapPage"));
 const LandsList = React.lazy(() => import("../pages/LandsList"));
+const TestPage = React.lazy(() => import("../pages/TestPage"));
 const KarmaRoutes: FC = function () {
   return (
     <Routes>
@@ -31,6 +32,14 @@ const KarmaRoutes: FC = function () {
         element={
           <Suspense fallback={<Loading />}>
             <LandsList />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/test"
+        element={
+          <Suspense fallback={<Loading />}>
+            <TestPage />
           </Suspense>
         }
       />
