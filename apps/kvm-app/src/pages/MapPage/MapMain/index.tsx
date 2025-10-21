@@ -47,7 +47,7 @@ export const thumbSizeArr = [80, 72, 64, 56, 48, 40, 32, 24, 16, 8];
 export const mainScaleArr = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
 const { TabPane } = Tabs;
 // import { Thing } from '@kvm/kvm-tile-map';
-function MapMain() {
+function App() {
   const [params, setUrlSearchParams] = useSearchParams();
   function initxy(xy: string | null): number {
     let xy_ = 0;
@@ -586,4 +586,4 @@ function MapMain() {
   );
 }
 
-export default memo(MapMain);
+export default memo(App);

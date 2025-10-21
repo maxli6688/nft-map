@@ -91,14 +91,15 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        //生产环境时移除console
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    minify: false,
+    // minify: "terser",
+    // terserOptions: {
+    //   compress: {
+    //     //生产环境时移除console
+    //     drop_console: true,
+    //     drop_debugger: true,
+    //   },
+    // },
     rollupOptions: {
       onwarn(warning, warn) {
         if (warning.code === "MIXED_EXPORTS") return;
