@@ -1,12 +1,12 @@
 import { atom, DefaultValue, AtomEffect } from "recoil";
 // import mapjson from '../../config/map.json';
 // const mapData = mapjson as AtlasDataObj; // mapDataState
-import { tile7zUrl, tilezipUrl } from "../../config/constants/map";
+import { tile7zUrl } from "../../config/constants/map";
 
 import { Archive } from "libarchive.js";
 Archive.init({
   // workerUrl: 'libarchive.js/dist/worker-bundle.js',
-  workerUrl: "public/worker-bundle.js",
+  workerUrl: "worker-bundle.js",
 });
 
 // import SevenZip from '7z-wasm';
@@ -65,7 +65,6 @@ const localForageEffect: AtomEffect<AtlasDataObj> = ({ setSelf, onSet }) => {
     })
   );
   onSet((newValue) => {
-    console.log(newValue, 345234522222222);
     if (newValue instanceof DefaultValue) {
       // localStorage.removeItem(key);
     } else {

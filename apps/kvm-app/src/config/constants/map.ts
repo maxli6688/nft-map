@@ -22,7 +22,7 @@ export const getLandImageUrl = (tile: AtlasTile) => {
 };
 export const thumbImageUrl = `${API_BASE_URL}/api/thumbimage`;
 // export const tilezipUrl = `${API_BASE_URL}/api/tilezip`;
-export const tilezipUrl = `${API_BASE_URL}/api/tilezip`;
+// export const tile7zUrl = `https://kvm-nft-map.netlify.app/api/tilez`;
 export const tile7zUrl = `${API_BASE_URL}/api/tilez`;
 export const landOwnersUrl = `${API_BASE_URL}/api/landowners`;
 export const mapColorObj = Object.freeze({
