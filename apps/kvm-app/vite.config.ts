@@ -9,6 +9,9 @@ import { Plugin as importToCDN } from "vite-plugin-cdn-import";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(mode === 'production' ? 'development' : mode),
+  },
   optimizeDeps: {
     // 预构建依赖：impetus(IIFE), mouse-wheel/touch-pinch/touch-position(CommonJS)
     include: [

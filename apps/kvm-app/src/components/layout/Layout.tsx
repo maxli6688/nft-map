@@ -50,14 +50,22 @@ const LanSwitch: React.FC = function () {
 };
 const App = () => {
   const { i18n } = useTranslation();
+  const [mapLibLoaded, setMapLibLoaded] = React.useState(!import.meta.env.PROD);
 
   useEffect(() => {
     if (import.meta.env.PROD) {
       window.React = React;
       window.ReactDOM = ReactDOM;
       const script = document.createElement("script");
-      script.src = "/kvm-map.umd.js";
-      document.head.appendChild(script);
+      script.src = "/kvm-tile-map.umd.js";
+      script.onload = () => {
+        console.log("kvm-tile-map.umd.js loaded", (window as any).KvmTileMap);
+        if ((window as any).KvmTileMap?.TileMapLite) {
+          console.log("KvmTileMap ready");
+          setMapLibLoaded(true);
+        }
+      };
+      document.body.appendChild(script);
     }
   }, []);
 
@@ -120,9 +128,13 @@ const App = () => {
             </Dropdown>
           </Header>
           <Content style={{ padding: "0" }} className="content">
-            <Suspense fallback={<Loading />}>
-              <Routes />
-            </Suspense>
+            {mapLibLoaded ? (
+              <Suspense fallback={<Loading />}>
+                <Routes />
+              </Suspense>
+            ) : (
+              <Loading />
+            )}
           </Content>
         </Layout>
       </BrowserRouter>

@@ -6,7 +6,7 @@ import React, {
   WheelEventHandler,
 } from "react";
 import Konva from "konva";
-import { Stage, Layer, Rect, Group, Image } from "react-konva";
+import { Stage, Layer, Rect, Group, Image as KonvaImage } from "react-konva";
 import type { StageProps } from "react-konva";
 import { Button } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
@@ -251,7 +251,7 @@ const KarmaMapThumb: React.FC<ThumbMapProps> = (props) => {
                     fill={"#00B0F0"}
                   />
                   {thumbimglist.map((item, i) => (
-                    <Image
+                    <KonvaImage
                       key={i}
                       x={
                         (i % thumbMapConf.col) *
